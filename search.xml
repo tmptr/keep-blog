@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/10/25/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>It&#39;s my first blog in 2023</title>
+    <url>/2023/07/05/my_first_blog/</url>
+    <content><![CDATA[<p>I know this year …<br><img  
+                     lazyload
+                     alt="image"
+                     data-src="https://cdn.staticaly.com/gh/tmptr/picxp@main/my_pics/FshzLXraYAcWkrb.6mefn9thk200.jpg"
+                      alt="lessismore!" title="Less is more!"
+                ></p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>Personal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Upgrate MySQL5.5 to 5.7 under Windows</title>
+    <url>/2023/08/06/upgratemysql/</url>
+    <content><![CDATA[<p>a. Backup the database using tools like command-line or Navicat UI to import the DB SQL.<br>b. Download the MySQL ver5.7 green version from the official website.<br>c. Use admin privileges to open the command line and execute the following commands:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld -install</span><br><span class="line">mysqld --initialize-insecure --user=mysql</span><br><span class="line">net start mysql  // If your service name is mysql</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Setting the new password for root:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysqld --skip-grant-tables</span><br><span class="line">Jump to another new command line window, execute the `mysql` command</span><br><span class="line">Input the following on the `mysql&gt;` prompt:</span><br><span class="line">update mysql.user set authentication_string=password(&quot;newpassword&quot;) where user=&quot;root&quot;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p>d. Create a new INI config file:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">port = 3306</span><br><span class="line">basedir=D:\mysql-5.7.43-winx64</span><br><span class="line">datadir=D:\mysql-5.7.43-winx64\data</span><br><span class="line">max_connections=150</span><br><span class="line">character-set-server=utf8</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line">sql_mode=NO_ENGINE_SUBSTITUTION // For previous compatibility, importantly</span><br><span class="line">explicit_defaults_for_timestamp=0   // For previous compatibility, importantly</span><br><span class="line">event_scheduler=ON</span><br><span class="line">max_allowed_packet=256M</span><br><span class="line">sort_buffer_size=3M</span><br><span class="line">#log_error=D:\mysql-5.7\error.log // Debug if open</span><br><span class="line">[mysql]</span><br></pre></td></tr></table></figure>
+
+<p>Once all the above steps are completed smoothly, you can proceed to import your database SQL and data using the backup files.</p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>Personal</tag>
+      </tags>
+  </entry>
+</search>
